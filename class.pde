@@ -1,28 +1,27 @@
-class knap{
- float xpos;
- float ypos;
- color c;
- PImage ree ; 
-
-
-knap (color tempC, float a,float b){
-c=tempC;
-a=xpos;
-b=ypos;
+class knap {
+  float xpos;
+  float ypos;
+  int Width;
+  int Height;
+ //int Color;
+  knap (float a, float b, int c, int d) {
+    xpos=a;
+    ypos=b;
+    Width=c;
+    Height =d;
+//Color = c;  
 }
 
-knap(){
- c=color(0,255,0); 
-  xpos=400 ;
-  ypos=250;
-}
+  knap() {
+
+    xpos=400 ;
+    ypos=250;
+  }
 
 
 
-void display(){
-rect(xpos,ypos,100,100);
+  void tegnKnapper() {
 
-}
-
-
+    rect(xpos, ypos, Width, Height);
+  }
 }
