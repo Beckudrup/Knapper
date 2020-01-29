@@ -4,14 +4,13 @@ class knap {
   int Width;
   int Height;
   String tekst;
-  
+  boolean klikketpaa= false;
   knap (float a, float b, int c, int d, String e) {
     xpos=a;
     ypos=b;
     Width=c;
     Height =d;
-    tekst =e; 
-    
+    tekst =e;
   }
 
   knap() {
@@ -26,32 +25,17 @@ class knap {
     fill(255, 0, 0);
     text(tekst, xpos+5, ypos+100);
   }
-  void pengePaaKontoen() {
+  void klikPaaKnap() {
     //If statement der checker om man klikker på en af knapperne
-    if (xpos<mouseX && mouseX<xpos+Width && mousePressed ==true && mouseY>ypos && mouseY<ypos+Width) {
+    if (xpos<mouseX && mouseX<xpos+Width && mousePressed ==true && mouseY>ypos && mouseY<ypos+Height) {
 
-      gryn = true;
+      klikketpaa = true;
       println("Chomusuke er cool");
     } else {
-      gryn = false;
-      println("Du har ikke penge til at købe Chomusuke men hun er stadig cool");
-    } 
-      
-    //If statementsne som sætter penge på kontierne
-    if (gryn == true && xpos<200 && ypos<200) {
-      konti1 +=pengeInd;
-    }
-
-    if (gryn == true && xpos>200 && ypos<200) {
-      konti2 +=pengeInd;
-    }
-     
-    if (gryn == true && xpos<200 && ypos>200) {
-      konti1 -=pengeInd;
-    }
-    
-    if (gryn == true && xpos>200 && ypos>200) {
-      konti2 -=pengeInd;
+      klikketpaa = false;
     }
   }
+
+
+
 }
